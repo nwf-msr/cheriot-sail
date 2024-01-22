@@ -780,7 +780,7 @@ function clause execute LoadCapImm(cd, cs1, imm) = {
             cr.permit_store = false;
             cr.permit_load_mutable = false;
           };
-          if ptw_info.ptw_lc == PTW_LC_CLEAR  | not(auth_val.permit_load_store_cap) then {
+          if not(auth_val.permit_load_store_cap) then {
             cr.tag = false;
           };
           /* Sealing capabilities are excluded from revocation */
